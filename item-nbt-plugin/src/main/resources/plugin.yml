@@ -1,4 +1,0 @@
-main: de.tr7zw.itemnbtapi.ItemNBTAPI
-name: ItemNBTAPI
-version: ${project.version}
-author: tr7zw
