@@ -1,4 +1,4 @@
-package de.tr7zw.itemnbtapi.utils;
+package au.com.addstar.monolith.util.nbtapi.utils;
 
 import org.bukkit.Bukkit;
 

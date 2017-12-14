@@ -1,8 +1,8 @@
-package de.tr7zw.itemnbtapi;
+package au.com.addstar.monolith.util.nbtapi;
 
 import java.util.Set;
 
-import de.tr7zw.itemnbtapi.utils.MinecraftVersion;
+import au.com.addstar.monolith.util.nbtapi.utils.MinecraftVersion;
 
 
 public class NBTCompound {

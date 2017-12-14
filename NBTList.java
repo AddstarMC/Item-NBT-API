@@ -1,6 +1,7 @@
-package de.tr7zw.itemnbtapi;
+package au.com.addstar.monolith.util.nbtapi;
 
-import de.tr7zw.itemnbtapi.utils.MethodNames;
+
+import au.com.addstar.monolith.util.nbtapi.utils.MethodNames;
 
 import java.lang.reflect.Method;
 

@@ -1,4 +1,4 @@
-package de.tr7zw.itemnbtapi;
+package au.com.addstar.monolith.util.nbtapi;
 
 public class NBTContainer extends NBTCompound{
 

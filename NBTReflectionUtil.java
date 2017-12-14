@@ -1,4 +1,4 @@
-package de.tr7zw.itemnbtapi;
+package au.com.addstar.monolith.util.nbtapi;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -8,14 +8,15 @@ import java.lang.reflect.Method;
 import java.util.Set;
 import java.util.Stack;
 
+
 import org.bukkit.Bukkit;
 import org.bukkit.block.BlockState;
 import org.bukkit.entity.Entity;
 import org.bukkit.inventory.ItemStack;
 
-import de.tr7zw.itemnbtapi.utils.GsonWrapper;
-import de.tr7zw.itemnbtapi.utils.MethodNames;
-import de.tr7zw.itemnbtapi.utils.MinecraftVersion;
+import au.com.addstar.monolith.util.nbtapi.utils.GsonWrapper;
+import au.com.addstar.monolith.util.nbtapi.utils.MethodNames;
+import au.com.addstar.monolith.util.nbtapi.utils.MinecraftVersion;
 
 // TODO: finish codestyle cleanup -sgdc3
 public class NBTReflectionUtil {
@@ -636,7 +637,7 @@ public class NBTReflectionUtil {
         Method method;
         try {
             method = workingtag.getClass().getMethod("setFloat", String.class, float.class);
-            method.invoke(workingtag, key, (float) f);
+            method.invoke(workingtag, key, f);
             comp.setCompound(rootnbttag);
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -674,7 +675,7 @@ public class NBTReflectionUtil {
         Method method;
         try {
             method = workingtag.getClass().getMethod("setLong", String.class, long.class);
-            method.invoke(workingtag, key, (long) f);
+            method.invoke(workingtag, key, f);
             comp.setCompound(rootnbttag);
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -712,7 +713,7 @@ public class NBTReflectionUtil {
         Method method;
         try {
             method = workingtag.getClass().getMethod("setShort", String.class, short.class);
-            method.invoke(workingtag, key, (short) f);
+            method.invoke(workingtag, key, f);
             comp.setCompound(rootnbttag);
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -750,7 +751,7 @@ public class NBTReflectionUtil {
         Method method;
         try {
             method = workingtag.getClass().getMethod("setByte", String.class, byte.class);
-            method.invoke(workingtag, key, (byte) f);
+            method.invoke(workingtag, key, f);
             comp.setCompound(rootnbttag);
         } catch (Exception ex) {
             ex.printStackTrace();
