@@ -19,6 +19,11 @@ public class NBTItem extends NBTCompound {
         bukkitItem = NBTReflectionUtil.getBukkitItemStack(NBTReflectionUtil.setNBTTag(compound, NBTReflectionUtil.getNMSItemStack(bukkitItem)));
     }
 
+    public boolean hasNBTData(){
+        return NBTReflectionUtil.getItemRootNBTTagCompound(NBTReflectionUtil.getNMSItemStack(bukkitItem)) == null;
+    }
+
+
     public ItemStack getItem() {
         return bukkitItem;
     }
