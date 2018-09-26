@@ -130,9 +130,11 @@ public class NBTCompound {
     public <T> T getObject(String key, Class<T> type) {
         return NBTReflectionUtil.getObject(this, key, type);
     }
-
+    
     public Boolean hasKey(String key) {
-        return (Boolean) NBTReflectionUtil.getData(this, ReflectionMethod.COMPOUND_HAS_KEY, key);
+        Boolean b =  (Boolean) NBTReflectionUtil.getData(this, ReflectionMethod.COMPOUND_HAS_KEY, key);
+        if(b == null)return false;
+        return b;
     }
 
     public void removeKey(String key) {
@@ -144,6 +146,7 @@ public class NBTCompound {
     }
 
     public NBTCompound addCompound(String name) {
+        if(getType(name) == NBTType.NBTTagCompound)return getCompound(name);
         NBTReflectionUtil.addNBTTagCompound(this, name);
         return getCompound(name);
     }
@@ -159,8 +162,10 @@ public class NBTCompound {
     }
 
     public NBTType getType(String name) {
-        if (MinecraftVersion.getVersion() == MinecraftVersion.MC1_7_R4) return NBTType.NBTTagEnd;
-        return NBTType.valueOf((byte) NBTReflectionUtil.getData(this, ReflectionMethod.COMPOUND_GET_TYPE, name));
+        if (MinecraftVersion.getVersion() == MinecraftVersion.MC1_7_R4) return null;
+        Object o = NBTReflectionUtil.getData(this, ReflectionMethod.COMPOUND_GET_TYPE, name);
+        if(o == null)return null;
+        return NBTType.valueOf((byte) o);
     }
 
     @Override
@@ -187,7 +192,9 @@ public class NBTCompound {
     }
     
     public String asNBTString(){
-        return NBTReflectionUtil.gettoCompount(getCompound(), this).toString();
+        Object comp = NBTReflectionUtil.gettoCompount(getCompound(), this);
+        if(comp == null)return "{}";
+        return comp.toString();
     }
 
 }
