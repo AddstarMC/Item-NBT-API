@@ -2,7 +2,9 @@ package au.com.addstar.monolith.util.nbtapi;
 
 import java.io.File;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
+import au.com.addstar.monolith.Monolith;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -10,11 +12,10 @@ import org.bukkit.entity.Animals;
 import org.bukkit.entity.Monster;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import au.com.addstar.monolith.util.nbtapi.utils.MinecraftVersion;
 
-public class ItemNBTAPI extends JavaPlugin {
+public class ItemNBTAPI {
 
     private static boolean compatible = true;
     private static boolean jsonCompatible = true;
@@ -26,9 +27,16 @@ public class ItemNBTAPI extends JavaPlugin {
         return instance;
     }
 
-    @Override
+    private Logger getLogger(){
+        return Monolith.getInstance().getLogger();
+    }
+    
+    private File getDataFolder(){
+        return Monolith.getInstance().getDataFolder();
+    }
     public void onEnable() {
         instance = this;
+        
         getLogger().info("Checking bindings...");
         getLogger().info("Minecraft Version:");
         MinecraftVersion.getVersion();
