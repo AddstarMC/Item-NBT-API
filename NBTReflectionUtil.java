@@ -11,8 +11,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.block.BlockState;
 import org.bukkit.entity.Entity;
 
-import de.tr7zw.itemnbtapi.utils.GsonWrapper;
-import de.tr7zw.itemnbtapi.utils.MinecraftVersion;
+import au.com.addstar.monolith.util.nbtapi.utils.GsonWrapper;
+import au.com.addstar.monolith.util.nbtapi.utils.MinecraftVersion;
 
 public class NBTReflectionUtil {
 
