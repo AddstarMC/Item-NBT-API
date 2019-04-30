@@ -1,7 +1,6 @@
 package au.com.addstar.monolith.util.nbtapi;
 
-import de.tr7zw.itemnbtapi.utils.MinecraftVersion;
-
+import au.com.addstar.monolith.util.nbtapi.utils.MinecraftVersion;
 public class NBTList {
 
 	private String listName;
